@@ -1,1 +1,72 @@
+<html>
+<head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+   <script>hljs.initHighlightingOnLoad();</script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/agate.min.css">
+   
+<style>
 
+body {
+ font-family: Arial;
+ color: blue;
+}
+
+.split {
+ height: 100%;
+ width: 50%;
+ position: fixed;
+ z-index: 1;
+ top: 0;
+ overflow-x: hidden;
+ padding-top: 20px;
+}
+.left {
+ left: 0;
+
+}
+
+.right {
+
+ right: 0;
+ background-color:black;
+}
+
+
+</style>
+</head>
+<body>
+
+
+<div class="split left">
+    <h1>hai</h1>
+
+    </div>
+</div>
+
+<div class="split right">
+<script>
+
+showSource();
+function showSource(){;
+   var source = "<html>";
+   source += document.getElementsByTagName('html')[0].innerHTML;
+   source += "</html>";
+   //now we need to escape the html special chars, javascript has escape
+   //but this does not do what we want
+   source = source.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+   //now we add <pre> tags to preserve whitespace
+   source = "<pre>"+source+"</pre>";
+   //now open the window and set the source as the content
+   document.write(source);
+   sourceWindow.document.close(); //close the document for writing, not the window
+   //give source window focus
+   if(window.focus) sourceWindow.focus();
+    document.writeln(source);
+}
+</script>     
+  </div>
+</div>
+
+
+</body>
+</html>
